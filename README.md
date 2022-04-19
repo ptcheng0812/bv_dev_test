@@ -1,6 +1,6 @@
 # Binary Vision Dev Test
 
-This is excersise is part of our interview process. Its a way for you to show
+This exercise forms part of our interview process. It's a way for you to show
 your skills as a developer and ability to work with an existing code base.
 
 ## Test
