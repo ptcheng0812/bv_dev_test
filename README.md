@@ -23,6 +23,5 @@ up to you.
 
 ## Running
 
-To run this app you will need `nodejs` and `yarn`.
-Run `yarn` in this folder to install the dependencies and `yarn start` to start 
-the app.
+To run this app you will need `nodejs` and `yarn`.  
+Run `yarn` in this folder to install the dependencies and `yarn start` to start the app.
