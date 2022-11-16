@@ -19,8 +19,7 @@ Planet radius (earth units): `pl_rade`
 The data should be sorted by `releasedate`
 
 This can be displayed on the home page below the existing text or on a new page, 
-up to you. Something that fits in line with existing styling, but you have the option 
-to make it look better.
+up to you. Something that fits in line with existing styling, but do also include some 'niceties' that you feel fits in with the general look and feel.
 
 ## Running
 
