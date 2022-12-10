@@ -10,8 +10,8 @@ import ThreeDimentionalGrid from './ThreeDimentionalGrid.png';
 import style from './style.module.scss';
 
 const Data = () => {
-  const [data, setData] = useState(null)
-  const [sortedData, setSortedData] = useState(null)
+  const [data, setData] = useState(null);
+  const [sortedData, setSortedData] = useState(null);
   const [results, setResults] = useState();
   const [searchType, setSearchType] = useState();
   const [selectedPlanet, setSelectedPlanet] = useState();
@@ -25,8 +25,6 @@ const Data = () => {
   { field: 'pl_rade', headerName: 'Planet Radius (earth units)', width: 200 },
   { field: 'releasedate', headerName: 'Release Date', width: 200 },
 ];
-
-  // console.log("check>>>", columns[])
 
   useEffect(() => {
     if(data) {
@@ -57,7 +55,7 @@ const Data = () => {
 
   return (
     <div className="data-container w-4/5 ml-80">
-      <div className="w-full mt-10 ml-5">
+      <div className="w-full mt-8 ml-5">
         <div className="grid grid-cols-2 gap-12">
           <div className="leftContainer wrapper">
             <div className="py-3 px-1 flex justify-start gap-3 items-center searchBarContainer">

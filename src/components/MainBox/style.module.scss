@@ -1,0 +1,22 @@
+.mainBoxContainer {
+  background-image: url("../Hero//background.jpg");
+}
+
+.seeButton {
+  border-left: 10px solid white;
+  border-top: 10px solid white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+
+
+  background: #6E6D70;
+  // box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
