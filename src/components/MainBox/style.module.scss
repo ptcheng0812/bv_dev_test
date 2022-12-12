@@ -1,5 +1,27 @@
-.mainBoxContainer {
-  background-image: url("../Hero//background.jpg");
+.background {
+  background-image: url("https://t3.ftcdn.net/jpg/04/11/75/88/360_F_411758816_R2mBjthRIlJvC3T5UeyMeRgjVONzl0z3.jpg");
+  background-size: cover;
+  font-family: Georgia, serif;
+}
+
+.background :hover {
+  background-image: url("../Hero/background.jpg");
+  background-size: cover;
+  background-position: 25% 75%;
+  color: white;
+  font-weight: 400;
+  transition: all 1s ease-in-out;
+}
+
+.background :hover .seeButton {
+  transition: 0.4s, background-position 1s;
+  --p: 100%;
+  background: #111827;
+  border: 0;
+  border-radius: 10%;
+  margin: 2%;
+  padding: 2%;
+  z-index: 1;
 }
 
 .seeButton {
@@ -19,4 +41,5 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
 }

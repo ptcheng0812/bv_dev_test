@@ -1,5 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { useState } from 'react';
+
+
 const Nav = () => {
+  const [ keyword, setKeyword] = useState("");
+
+  const handleKeyPress = (event) => {
+  if(event.key === 'Enter'){
+    window.location.replace(`/data/data?keyword=${keyword}`);
+  }
+}
+
+  console.log("keyword>>>", keyword)
+
   return (
     <nav className="flex justify-between  text-white w-screen">
       <div className="px-5 xl:px-9 xl:py-5 flex w-full items-center justify-between">
@@ -11,6 +24,8 @@ const Nav = () => {
             type="text"
             placeholder="Search"
             className="text-[18px] ml-4 w-full bg-transparent focus:outline-none px-10"
+            onChange={(e) => { setKeyword(e.target.value) }}
+            onKeyPress={handleKeyPress}
           />
         </div>
         <div className="hidden xl:flex items-center space-x-12 items-center duration-300 mr-10">
@@ -23,11 +38,11 @@ const Nav = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-            <span className="flex absolute -mt-5 ml-4">
+            {/* <span className="flex absolute -mt-5 ml-4">
               <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500">
                 </span>
-              </span>
+              </span> */}
           </a>
           <a className="flex items-center hover:text-gray-200 " href="#">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">

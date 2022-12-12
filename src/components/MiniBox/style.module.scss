@@ -3,3 +3,37 @@
   margin-left: 40px;
   margin-top: 30px;
 }
+
+// .overlay {
+//   background: #008CBA;
+//   overflow: hidden;
+//   width: 0;
+//   height: 100%;
+//   transition: .5s ease;
+// }
+// .miniBoxWrapper {
+//   transition: all .2s ease-in;
+// }
+
+.miniBoxWrapper:hover {
+  animation: change 0.2s ease forwards;
+}
+
+.miniBoxWrapper:hover .BigText{
+  font-size: 50px;
+  color: #5e89e6;
+  border-left: -5px;
+}
+
+
+@keyframes change {
+  0% {
+		background: rgb(28,63,138);
+    background: linear-gradient(21deg, rgba(28,63,138,1) 0%, rgba(0,0,0,1) 0%);
+	}
+
+	100% {
+		background:black;
+    background: linear-gradient(21deg, rgb(0, 0, 0) 0%, rgba(0,0,0,1) 100%);
+	}
+}

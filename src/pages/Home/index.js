@@ -46,7 +46,7 @@ const Home = () => {
         </div>
         <div className="w-1/3">
             <Tutorial/>
-          </div>
+        </div>
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, Suspense, useCallback } from 'react';
+import { useLocation } from "react-router-dom";
 import { DataGrid } from '@mui/x-data-grid';
 import { Canvas } from '@react-three/fiber';
-import styled from 'styled-components';
 
 import { fetchData } from "../../actions/fetch";
 import { isFloat } from '../../helpers/helper';
@@ -13,7 +13,6 @@ import { Loader } from '../../components/Loader';
 import ThreeDimentionalGrid from './ThreeDimentionalGrid.png';
 import rulerX from './rulerX.png';
 import rulerY from './rulerY.png';
-import dots from './dots.png';
 import style from './style.module.scss';
 
 // const searchBar = styled.div`
@@ -30,6 +29,11 @@ const Data = () => {
   const [isZoom, setIsZoom] = useState(false);
   const [isRotate, setIsRotate] = useState(true);
   const [axis, setAxis] = useState("");
+
+  const search = useLocation().search;
+  const query = new URLSearchParams(search).get('keyword');
+
+  console.log("query >>>>>>>>>>--------", query)
 
   const columns = [
   { field: 'pl_name', headerName: 'Planet Name', width: 200 },
@@ -81,14 +85,15 @@ const Data = () => {
         setSortedData(filteredData)
       } else {
         // console.log("orderedData>>>>>>>>>>>>>", orderedData)
-        setSortedData(orderedData)
+        setSortedData(query ? orderedData.filter((ele) => { return ele.pl_name.includes(query) }) : orderedData)
+        setSelectedPlanet(query ? orderedData.filter((ele) => { return ele.pl_name.includes(query) }) : null)
       }
     }
-  }, [data, results, searchType])
+  }, [data, results, searchType, query])
 
   // console.log("results", results)
   // console.log("searchType", searchType)
-  // console.log("selectedPlanet", selectedPlanet[0])
+  // console.log("selectedPlanet", selectedPlanet)
   // console.log("isRotate >>>", isRotate)
 
   return (
@@ -97,7 +102,7 @@ const Data = () => {
         <div className="grid grid-cols-2 gap-12">
           <div className="leftContainer wrapper">
             <div className={`${style.filterSearch} relative py-3 px-3 flex justify-start gap-3 items-center rounded`}>
-              <img src={dots} alt="dots" width="800" height="100" className={style.dots}/>
+              {/* <img src={dots} alt="dots" width="800" height="100" className={style.dots}/> */}
               <select className={`${style.search} select select-bordered max-w-xs` }onChange={(e) => {setSearchType(e.target.value)}}>
                 <option disabled selected>Pick Search Filter</option>
                 {columns && columns.map(column => (
@@ -107,10 +112,14 @@ const Data = () => {
                 ))}
               </select>
               {searchType && (
-                <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" onChange={(e) => {
+                <input type="search" placeholder="Type here" className="input input-bordered w-full max-w-xs" onChange={(e) => {
                   setResults(e.target.value);
                 }}/>
-              ) || <input type="text" placeholder="Please select what you want to search" class="input input-bordered w-full max-w-xs" disabled />}
+              ) || <input type="text" placeholder="Please select what you want to search" class="input input-bordered w-full max-w-xs" disabled />
+              }
+              <span className="text-[16px] text-blue-800 ml-36 hover:text-white" onClick={() => {
+                window.location.replace('/data');
+              }}><button className={style.refreshButton}><i class="fa-solid fa-arrows-rotate"></i></button></span>
             </div>
             <div className={`white ${style.table}`} style={{ height: 700, width: '100%' }}>
               {data && sortedData && (
