@@ -13,3 +13,17 @@ export function findLargestRadius(array) {
 
   return max?.pl_rade;
 }
+
+export function temperatureConvert(temp) {
+  const celsius = temp-273.15
+
+  return Number((celsius)?.toFixed(3));
+}
+
+export function roundUpFloat(number) {
+  if (isNaN(Number((number)?.toFixed(2)))) {
+    return ""
+  }
+
+  return Number((number)?.toFixed(2));
+}

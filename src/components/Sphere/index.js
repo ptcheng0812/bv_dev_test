@@ -10,7 +10,7 @@ import BrownPlanetTexture from './BrownPlanetTexture.jpg';
 import GreyTexture from './GreyTexture.jpg';
 import SnowyPlanetTexture from './SnowyPlanetTexture.jpg';
 
-export function Sphere({selectedPlanet}) {
+export function Sphere({selectedPlanet, toggleZoom, toggleRotate}) {
   const [texture, setTexture] = useState(GreyTexture);
 
   //change texture based on selectedPlanet
@@ -35,11 +35,12 @@ export function Sphere({selectedPlanet}) {
     <>
       <ambientLight intensity={0.5}/>
       <mesh>
-        <sphereGeometry args={[1.85, 32, 32]}/>
+        <sphereGeometry args={[1.7, 32, 32]}/>
         <meshPhongMaterial color="grey"/>
         <meshStandardMaterial map={colorMap} normalMap={normalMap}/>
-        <OrbitControls enableZoom={false} enableRotate={true} rotateSpeed={0.6}/>
+        <OrbitControls enableZoom={toggleZoom ? toggleZoom : toggleZoom} enableRotate={toggleRotate? toggleRotate : toggleRotate} rotateSpeed={0.6}/>
       </mesh>
+
     </>
   )
 }

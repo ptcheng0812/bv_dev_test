@@ -2,18 +2,18 @@
 const Nav = () => {
   return (
     <nav className="flex justify-between  text-white w-screen">
-      <div className="px-5 xl:px-9 py-8 flex w-full items-center justify-between">
+      <div className="px-5 xl:px-9 xl:py-5 flex w-full items-center justify-between">
         <div
-          className="flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-100 text-black -mt-3 ml-80"
+          className="flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-100 text-black ml-[365px]"
         >
-          <i className="bi bi-search text-sm"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input
             type="text"
             placeholder="Search"
             className="text-[18px] ml-4 w-full bg-transparent focus:outline-none px-10"
           />
         </div>
-        <div className="hidden xl:flex items-center space-x-12 items-center duration-300">
+        <div className="hidden xl:flex items-center space-x-12 items-center duration-300 mr-10">
           <a className="hover:text-gray-200 " href="#">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
