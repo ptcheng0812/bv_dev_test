@@ -31,25 +31,24 @@ const BigText = styled.h3`
 
 const MiniBox = ({dataHead, dataDescription, img}) => {
   return (
-    <Wrapper className={`${style.miniBoxWrapper} flex flex-row`}>
-      <div className={`${style.overlay2}`}>
-        <div className={` lex flex-col p-5`}>
-          <div className="flex flex-row items-center">
+      <Wrapper className={`${style.miniBoxWrapper} flex flex-row`}>
+        <div className={`${style.overlay2}`}>
+          <div className={` lex flex-col p-5`}>
+            <div className="flex flex-row items-center">
+              {img.toString().includes("planetlogo") ?
+                <BigText className={`${style.BigText} w-3/4 mt-1`}>{dataHead}</BigText> :
+                <BigText className={`${style.BigText} w-3/4 mt-1`}>{dataHead}</BigText>}
+                <img src={img} alt="small_logo" width="40" height="1" className={style.logoImg}></img>
+            </div>
             {img.toString().includes("planetlogo") ?
-              <BigText className={`${style.BigText} w-3/4 mt-1`}>{dataHead}</BigText> :
-              <BigText className={`${style.BigText} w-3/4 mt-1`}>{dataHead}</BigText>}
-              <img src={img} alt="small_logo" width="40" height="1" className={style.logoImg}></img>
+              <Description className="font-small mt-2">{dataDescription}</Description> : <Description className="font-small">{dataDescription}</Description>
+            }
           </div>
-          {img.toString().includes("planetlogo") ?
-            <Description className="font-small mt-2">{dataDescription}</Description> : <Description className="font-small">{dataDescription}</Description>
-          }
-        </div>
-        <div className="flex items-center mr-6">
+          <div className="flex items-center mr-6">
 
+          </div>
         </div>
-      </div>
-
-    </Wrapper>
+      </Wrapper>
   )
 }
 

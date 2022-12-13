@@ -67,3 +67,6 @@ I actually planned some other features that has not be implemented yet. For exam
 - Responsive(mobile viewport)
 - Authentication (imagine this is a real product, session token can provide a lot more on props or state's control)
 - Modal (that can be used for authenticating)
+
+## Demo
+Demo Link: [https://cosmo-exoplanets.netlify.app/](https://cosmo-exoplanets.netlify.app/)
