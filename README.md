@@ -32,7 +32,7 @@ Imagine the application will be used for scientists or astronomy professionals t
 ## Main Feature
 
 ### Exo Planets Table
-![image info](https://i.imgur.com/nX5Oh3u.png)
+![image info](https://i.imgur.com/pqPkqTc.png)
 - Exo Planets Table show data set from TESS api. Data is fetched and then sorted based on release date.
 - Filter Search funtionaslity is impllemented to query Planet Name, Planet Radius (earth units), Temperature (℃), Release Date
 - Pagination for showing 10 rows of data, which is more user-friendly, and Refresh Filter Button to reset filter and re-render table.
@@ -41,7 +41,7 @@ Imagine the application will be used for scientists or astronomy professionals t
 - 3D modeling of planet sphere, created by using three.js can provide a cool visualization.
 
 ### Home View
-![image info](https://i.imgur.com/ivtf5xX.png)
+![image info](https://i.imgur.com/Nl6AbP4.png)
 - Summary of data is presented in card component so users can instantly view changes of data. In a real-life situation, scientists might need to inspect updates and newly released planets. An ovewrview caption of data can allow users to eaily spot changes and new data.
 - Interactive and original design, such as hover effect and animation, to provide better user-experience.
 - Tutorial card component on the right is to give new user the flow of using the dashboard. By laying out how to use the features and redirect, it provides more user-accessibility.
