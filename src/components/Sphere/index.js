@@ -4,6 +4,8 @@ import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { OrbitControls } from '@react-three/drei';
 
+import { calibrateSize } from '../../helpers/helper';
+
 import RedPlanetTexture from './RedPlanetTexture.jpg';
 import SilverPlanetTexture from './SilverPlanetTexture.jpg';
 import BrownPlanetTexture from './BrownPlanetTexture.jpg';
@@ -12,6 +14,7 @@ import SnowyPlanetTexture from './SnowyPlanetTexture.jpg';
 
 export function Sphere({selectedPlanet, toggleZoom, toggleRotate}) {
   const [texture, setTexture] = useState(GreyTexture);
+  const [actualSize, setActualSize] = useState(1.75);
 
   //change texture based on selectedPlanet
   useEffect(() => {
@@ -29,13 +32,20 @@ export function Sphere({selectedPlanet, toggleZoom, toggleRotate}) {
     }
   },[selectedPlanet])
 
+  useEffect(() => {
+    if (selectedPlanet) {
+      setActualSize(calibrateSize(selectedPlanet[0]))
+    }
+  }, [selectedPlanet])
+
+
   const [colorMap, normalMap] = useLoader(TextureLoader, [texture, texture])
 
   return (
     <>
       <ambientLight intensity={0.5}/>
       <mesh>
-        <sphereGeometry args={[1.7, 32, 32]}/>
+        <sphereGeometry args={[actualSize, 32, 32]}/>
         <meshPhongMaterial color="grey"/>
         <meshStandardMaterial map={colorMap} normalMap={normalMap}/>
         <OrbitControls enableZoom={toggleZoom ? toggleZoom : toggleZoom} enableRotate={toggleRotate? toggleRotate : toggleRotate} rotateSpeed={0.6}/>

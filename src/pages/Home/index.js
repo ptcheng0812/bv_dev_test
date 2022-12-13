@@ -28,11 +28,9 @@ const Home = () => {
     if (data) {
       setLargestDate(findLargestDate(data)?.releasedate)
       setLargestRadius(findLargestRadius(data).toString())
-      // console.log("data>>>>>>>Home>>>>", findLargestRadius(data))
     }
   }, [data])
 
-  // console.log("largestDate>>>>>", largestDate)
   return (
     <div className={`container-sm ${style.main}`}>
       <div className="mainWrapper flex flex-row gap-20 w-full">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from 'styled-components';
 
 const sourceData = [
-  { headerText: "Main Search Bar", mainText: "Top search bar on nav can search by keywords from Exo planets data set. This is a quick and efficient way to query what planet you are looking for.", subText: "Try to type something on top and click search."},
+  { headerText: "Main Search Bar", mainText: "Top search bar on nav can search by keywords from Exo planets data set by Planet Name. This is a quick and efficient way to query what planet you are looking for.", subText: "Try to type something on top and click search."},
   { headerText: "Exo Planets Tables", mainText: "If you would like to look up what is the recently added planets and their radius, temperature etc, you can click the See Table button or Exo Planets button on Nav to access", subText: "Look up planet details on Tess"},
   { headerText: "Single Planet Panel", mainText: "Click each row of the table, you will see how the panel update and showcase each planet.", subText: "Analysis on data can be comparable "}
 ];

@@ -23,7 +23,7 @@ import style from './style.module.scss';
 const Data = () => {
   const [data, setData] = useState(null);
   const [sortedData, setSortedData] = useState(null);
-  const [results, setResults] = useState();
+  const [results, setResults] = useState(null);
   const [searchType, setSearchType] = useState();
   const [selectedPlanet, setSelectedPlanet] = useState();
   const [isZoom, setIsZoom] = useState(false);
@@ -33,12 +33,11 @@ const Data = () => {
   const search = useLocation().search;
   const query = new URLSearchParams(search).get('keyword');
 
-  console.log("query >>>>>>>>>>--------", query)
 
   const columns = [
   { field: 'pl_name', headerName: 'Planet Name', width: 200 },
   { field: 'pl_rade', headerName: 'Planet Radius (earth units)', width: 200 },
-  { field: 'st_teff', headerName: 'Temperature (℃)', width: 200 },
+  { field: 'st_teff', headerName: 'Temperature (K)', width: 200 },
   { field: 'releasedate', headerName: 'Release Date', width: 200 },
   ];
 
@@ -60,8 +59,6 @@ const Data = () => {
     }
   }, [isRotate])
 
-  // console.log("selectedAxis", axis)
-
 
   useEffect(() => {
     fetchData().then((res) => {setData(res)})
@@ -80,19 +77,19 @@ const Data = () => {
       }
 
       if (results) {
-        const filteredData = orderedData.filter((element) => isFloat(element[searchType]) ?  element[searchType].toString().includes(results): element[searchType].includes(results))
-        // console.log("filteredData>>>", filteredData)
-        setSortedData(filteredData)
+        const filteredData = orderedData.filter((element) => isFloat(element[searchType]) ?  element[searchType].toString().includes(results): element[searchType].toString().includes(results))
+        if (filteredData) {
+          setSortedData(filteredData)
+        }
       } else {
-        // console.log("orderedData>>>>>>>>>>>>>", orderedData)
         setSortedData(query ? orderedData.filter((ele) => { return ele.pl_name.includes(query) }) : orderedData)
         setSelectedPlanet(query ? orderedData.filter((ele) => { return ele.pl_name.includes(query) }) : null)
       }
     }
   }, [data, results, searchType, query])
 
-  // console.log("results", results)
-  // console.log("searchType", searchType)
+  console.log("results", results)
+  console.log("searchType", searchType)
   // console.log("selectedPlanet", selectedPlanet)
   // console.log("isRotate >>>", isRotate)
 

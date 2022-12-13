@@ -27,3 +27,14 @@ export function roundUpFloat(number) {
 
   return Number((number)?.toFixed(2));
 }
+
+export function calibrateSize(selectedPlanet) {
+  const actualSize = (((selectedPlanet?.pl_rade -1.147) / 18.581) * 0.8) + 1.2
+  return actualSize;
+}
+
+export function validateDate(date) {
+  let dateReg = /^\d{4}[./-]\d{2}[./-]\d{2}$/
+
+  return date.toString().match(dateReg);
+}

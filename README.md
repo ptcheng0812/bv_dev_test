@@ -37,15 +37,19 @@ Imagine the application will be used for scientists or astronomy professionals t
 - Filter Search funtionaslity is impllemented to query Planet Name, Planet Radius (earth units), Temperature (℃), Release Date
 - Pagination for showing 10 rows of data, which is more user-friendly, and Refresh Filter Button to reset filter and re-render table.
 - React hooks such as useEffect, useState and useCallback are being used to control state lifecycle logic, giving full component control based on table query rows, search keyword or selected planet, etc.
-- Helper functions are written in helper.js for data converting, sorting, vavlidating, etc.
+- Helper functions are written in helper.js for data converting, sorting, validating, etc.
 - 3D modeling of planet sphere, created by using three.js can provide a cool visualization.
 
 ### Home View
 ![image info](https://i.imgur.com/ivtf5xX.png)
 - Summary of data is presented in card component so users can instantly view changes of data. In a real-life situation, scientists might need to inspect updates and newly released planets. An ovewrview caption of data can allow users to eaily spot changes and new data.
 - Interactive and original design, such as hover effect and animation, to provide better user-experience.
-- Tutorial card component on the right is to give new user the flow of using the dashboard. By laying out how to use the features and redirect, it provides more user-accessibilty.
+- Tutorial card component on the right is to give new user the flow of using the dashboard. By laying out how to use the features and redirect, it provides more user-accessibility.
 
+### Nav Search and Side bar Redirect
+![image info](https://i.imgur.com/ivtf5xX.png)
+- Type in Planet Name on Top Search Bar with get you to http://localhost:3000/data/data?keyword=something, which the query string would be used for finding corresponding planet in Data page
+- Side Bar to navigate two different pages, dummy Logout button not implemented yet
 
 ## Denpendecies
 mui/x-data-grid, threejs, tailwindcss, styled-components
@@ -58,7 +62,8 @@ yarn test
 
 ## Improvements
 I actually planned some other features that has not be implemented yet. For example,
--Tooltip
--Responsive(mobile viewport)
--Authentication (imagine this is a real product, session token can provide a lot more on props or state's control)
--Modal (that can be used for authenticating)
+- More Validations on input
+- Tooltip
+- Responsive(mobile viewport)
+- Authentication (imagine this is a real product, session token can provide a lot more on props or state's control)
+- Modal (that can be used for authenticating)

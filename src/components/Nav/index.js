@@ -29,7 +29,7 @@ const Nav = () => {
           <i class="fa-solid fa-magnifying-glass" onClick={handleOnClick}></i>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search by Planet Name"
             className="text-[18px] ml-4 w-full bg-transparent focus:outline-none px-10"
             onChange={(e) => { setKeyword(e.target.value) }}
             onKeyPress={handleKeyPress}

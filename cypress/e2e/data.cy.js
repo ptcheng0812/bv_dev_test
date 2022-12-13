@@ -1,33 +1,33 @@
 /* eslint-disable no-undef */
 
-// describe('Visit', () => {
-//   it('Passes', () => {
-//     cy.viewport(1903, 929)
-//     cy.visit('http://localhost:3000/data')
-//   })
-// })
+describe('Visit', () => {
+  it('Passes', () => {
+    cy.viewport(1903, 929)
+    cy.visit('http://localhost:3000/data')
+  })
+})
 
-// describe('api fetch', () => {
-//   it('Passes', () => {
-//     cy.viewport(1903, 929)
-//     cy.visit('http://localhost:3000/data')
+describe('api fetch', () => {
+  it('Passes', () => {
+    cy.viewport(1903, 929)
+    cy.visit('http://localhost:3000/data')
 
-//     cy.request('https://binary-vision.s3.eu-west-2.amazonaws.com/discoveries.json').as('response')
+    cy.request('https://binary-vision.s3.eu-west-2.amazonaws.com/discoveries.json').as('response')
 
-//     cy.get('@response').should((response) => {
-//       expect(response.status).to.eq(200)
-//       expect(response.body).to.have.length(37)
+    cy.get('@response').should((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body).to.have.length(37)
 
-//       for (let i = 0; i < 37; i++) {
-//         expect(response.body[i]).to.have.property('pl_name')
-//         expect(response.body[i]).to.have.property('releasedate')
-//         expect(response.body[i]).to.have.property('pl_rade')
-//       }
+      for (let i = 0; i < 37; i++) {
+        expect(response.body[i]).to.have.property('pl_name')
+        expect(response.body[i]).to.have.property('releasedate')
+        expect(response.body[i]).to.have.property('pl_rade')
+      }
 
-//       console.log("body", response.body)
-//     })
-//   })
-// })
+      console.log("body", response.body)
+    })
+  })
+})
 
 describe('test data order', () => {
   it('Check Latest', () => {
