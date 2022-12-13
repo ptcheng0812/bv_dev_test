@@ -21,7 +21,8 @@
   border-radius: 10%;
   margin: 2%;
   padding: 2%;
-  z-index: 1;
+
+  cursor: pointer;
 }
 
 .seeButton {
@@ -42,4 +43,5 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 
+  cursor: pointer;
 }
