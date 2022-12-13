@@ -103,7 +103,7 @@ const Data = () => {
           <div className="leftContainer wrapper">
             <div className={`${style.filterSearch} relative py-3 px-3 flex justify-start gap-3 items-center rounded`}>
               {/* <img src={dots} alt="dots" width="800" height="100" className={style.dots}/> */}
-              <select className={`${style.search} select select-bordered max-w-xs` }onChange={(e) => {setSearchType(e.target.value)}}>
+              <select className={`${style.search} select select-bordered max-w-xs` } onChange={(e) => {setSearchType(e.target.value)}}>
                 <option disabled selected>Pick Search Filter</option>
                 {columns && columns.map(column => (
                   <option value={column.field}>
@@ -112,10 +112,10 @@ const Data = () => {
                 ))}
               </select>
               {searchType && (
-                <input type="search" placeholder="Type here" className="input input-bordered w-full max-w-xs" onChange={(e) => {
+                <input type="search" placeholder="Type here" data-cy="filter" className="input input-bordered w-full max-w-xs " onChange={(e) => {
                   setResults(e.target.value);
                 }}/>
-              ) || <input type="text" placeholder="Please select what you want to search" class="input input-bordered w-full max-w-xs" disabled />
+              ) || <input type="text" placeholder="Please select what you want to search" data-cy="filter" class="input input-bordered w-full max-w-xs" disabled />
               }
               <span className="text-[16px] text-blue-800 ml-36 hover:text-white" onClick={() => {
                 window.location.replace('/data');
@@ -136,20 +136,6 @@ const Data = () => {
                     );
                     setSelectedPlanet(selectedRows);
                   }}
-                  // sx={{ color: "white", "& .MuiMenuItem-root": {
-                  //   color: "white"
-                  // } }}
-                  // componentsProps={{
-                  // pagination: {
-                  //       sx: {
-                  //         color: "white",
-                  //         "& .MuiMenuItem-root": {
-                  //           color: "white"
-                  //         }
-                  //       }
-                  //     }
-                  // }}
-                  // pagination
                 />
               )}
             </div>
