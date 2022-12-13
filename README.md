@@ -47,7 +47,7 @@ Imagine the application will be used for scientists or astronomy professionals t
 - Tutorial card component on the right is to give new user the flow of using the dashboard. By laying out how to use the features and redirect, it provides more user-accessibility.
 
 ### Nav Search and Side bar Redirect
-![image info](https://i.imgur.com/ivtf5xX.png)
+![image info](https://i.imgur.com/mqZyXa3.png)
 - Type in Planet Name on Top Search Bar with get you to http://localhost:3000/data/data?keyword=something, which the query string would be used for finding corresponding planet in Data page
 - Side Bar to navigate two different pages, dummy Logout button not implemented yet
 
